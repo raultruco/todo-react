@@ -12,9 +12,11 @@
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
   },
   "dependencies": {
+    "@material-ui/core": "^4.10.2",
+    "@material-ui/icons": "^4.9.1",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "prop-types": "^15.7.2"
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",

@@ -1,13 +1,14 @@
 import React from 'react';
-
+import { TodoProvider } from '../store/context';
 import Header from './Header.jsx';
+import TodosList from './TodosList.jsx';
 
 const App = () => {
   return (
-    <div>
-      <Header/>
-      <div className="view">Some todos should be here</div>
-    </div>
+    <TodoProvider>
+      <Header />
+      <TodosList />
+    </TodoProvider>
   );
 };
 

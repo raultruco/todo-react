@@ -1,80 +1,36 @@
-# [pi-top](https://pi-top.com) - Frontend technical test
+# todo-react
 
-This test is a part of our hiring process at pi-top for frontend positions. It should take you between 3 and 6 hours depending on your experience.
+A Todo frontend application using modern React paradigms such as Hooks, Flux with `useReducer`, global state with `useContext`, functional components, prop-types, etc.
 
-**Feel free to apply! Drop us a line with your LinkedIn/GitHub/Twitter/AnySocialProfileWhereYouAreActive at careers@pi-top.com**
+## Features
 
-
-## Summary
-The goal of this test is to make you code a small ReactJS app. We have prepared a skeleton app for you, but please change whatever you want (file structure, build process, HTML, CSS...) or don't use it at all. We have provided an API for you to use as the backend for your app which is documented below and which you must use.
-
-The app will be a Todo list (sorry) with the following features:
-- **Todo List** - simple list of notes
-- **Todo Detail** - detail of a note
-- **Todo Creator** - ability to input new notes
-
-Show us what you can do in 6 hours tops.  Don't spend too much time on designing your app, our design team will hate it anyway :P
-
-**Bonus:** The user would also be able mark a Todo 'isDone' and have them displayed appropriately. Please code that only if you have extra time.
-
-### Requirements
-- Features listed above
-- Use the provided backend
-- React
-- Thoughtful state management
-- Responsive design
-
-### Bonus/Suggestions
-- Bonus feature above
-- Unit and integration tests
-- CSS modules or alternative
-- Modern react paradigms
-- Typing e.g. Typescript, prop-types, Flow
-- ... Impress us!
-
+- React 16 and Hooks
+- Flux state management using `useReducer` and `useContext`
+- Material UI
+- Babel, Webpack, Eslint and Prettier
+- prop-types
+- React Router Dom
+- Axios API calls
+- Mark a Todo done / undone using optimistic updates
 
 ## Installation
-We're using [yarn](https://yarnpkg.com) here:
+
+Using [yarn](https://yarnpkg.com):
+
 ```
 yarn install
-yarn start
+yarn run start
 ```
 
+That will spin up a new webpack-dev-serve on [http://localhost:8080](http://localhost:8080).
 
-## API documentation
-### Routes
-- **GET** - https://backend-test.pi-top.com/todo-test/v1/todos: list all todos. description and tags are not included
-- **GET** - https://backend-test.pi-top.com/todo-test/v1/todos/:id retrieve a specific todo details
-- **POST** - https://backend-test.pi-top.com/todo-test/v1/todos create a todo. You'll need to send a JSON in the request body:
-```
-{
-  title: 'test todo',
-  description: 'sample todo for pi-top frontend-test-react',
-  priority: 5,
-  tags: ['test']
-}
-```
-- **PUT** - https://backend-test.pi-top.com/todo-test/v1/todos/:id update a todo. The only field updatable is isDone (bool). You'll need to send a JSON in the request body:
-```
-{
-  isDone: true
-}
-```
-- **POST** - https://backend-test.pi-top.com/todo-test/v1/reset: Reset all todos to initial state.
+### Pending
 
-### Todo object
-- **id** - string - unique ID of call
-- **createdAt** - string - creation date
-- **title** - string (required) - short todo title
-- **description** - string (required) - todo detailed description
-- **priority** - number - importance of task
-- **tags** - array of strings - tags
-- **isDone** - boolean - if todo is done or not
+- Unit and integration tests (Jest?)
+- Form validation (Formik or React Hook Form)
+- Consider using `@reach/router` rather than `react-router-dom`. [See advice about the future of react-router-dom](https://reacttraining.com/blog/reach-react-router-future/)
+- Use [Github actions](https://github.com/features/actions) to execute automatic integration tests and CI/CD
 
+### Issues
 
-## Submission
-Clone this repository, create your own public repository, switch out the [remotes](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes) and send us a link.
-
-We'll review it and get back to you in order to talk about your code!
-
-Contact us at support@pi-top.com if you need more details.
+- The API endpoint to update a Todo at `PUT ...url` seems not to update the todo, so the edit todo UI here doesn't work either...

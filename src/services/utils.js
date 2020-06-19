@@ -1,5 +1,14 @@
 const priorityComparer = (a, b) => a.priority > b.priority;
 
+export const transformTodoResponse = (data) => {
+  data.priority = parseInt(data.priority) || 1;
+  return data;
+};
+
+export const transformTodoListResponse = (data) => {
+  return data.map(transformTodoResponse);
+};
+
 export const addTodoSorted = (todos, newItem) => {
   if (!todos) {
     return [];

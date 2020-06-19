@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { transformTodoResponse, transformTodoListResponse } from '../services/utils';
 
 export const actionTypes = {
     GET_TODOS: 'GET_TODOS',
@@ -17,7 +18,7 @@ export async function init(dispatch = null) {
     dispatch({ type: actionTypes.INITIALIZING, payload: true });
     try {
         const todos = await axios.get(`${API_ENDPOINT}/todos`);
-        dispatch({ type: actionTypes.GET_TODOS, payload: todos.data });
+        dispatch({ type: actionTypes.GET_TODOS, payload: transformTodoListResponse(todos.data) });
     } catch (error) {
         dispatch({ type: actionTypes.ERROR, payload: error })
     } finally {
@@ -30,7 +31,7 @@ export async function getTodos(dispatch) {
     dispatch({ type: actionTypes.FETCHING, payload: true });
     try {
         const todos = await axios.get(`${API_ENDPOINT}/todos`);
-        dispatch({ type: actionTypes.GET_TODOS, payload: todos.data });
+        dispatch({ type: actionTypes.GET_TODOS, payload: transformTodoListResponse(todos.data) });
     } catch (error) {
         dispatch({ type: actionTypes.ERROR, payload: error })
     } finally {
@@ -43,7 +44,7 @@ export async function getTodo(dispatch, id) {
     dispatch({ type: actionTypes.FETCHING, payload: true });
     try {
         const todo = await axios.get(`${API_ENDPOINT}/todos/${id}`);
-        dispatch({ type: actionTypes.GET_TODO, payload: todo.data });
+        dispatch({ type: actionTypes.GET_TODO, payload: transformTodoResponse(todo.data) });
     } catch (error) {
         dispatch({ type: actionTypes.ERROR, payload: error })
     } finally {

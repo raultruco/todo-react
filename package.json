@@ -1,9 +1,9 @@
 {
-  "name": "frontend-test-react",
-  "version": "1.0.0",
-  "description": "Technical test for Frontend Engineer position at pi-top",
+  "name": "todo-react",
+  "version": "1.1.0",
+  "description": "Technical test for Frontend Engineer position",
   "main": "index.js",
-  "repository": "https://github.com/pi-top/frontend-test-react.git",
+  "repository": "https://github.com/raultruco/todo-react",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",

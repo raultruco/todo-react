@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   ListItem,
@@ -7,7 +8,7 @@ import {
   ListItemText,
   ListItemSecondaryAction,
 } from '@material-ui/core';
-import DeleteOutlined from '@material-ui/icons/DeleteOutlined';
+import EditOutlined from '@material-ui/icons/EditOutlined';
 import { useTodoDispatch } from '../store/context';
 import { updateTodo } from '../store/actions';
 
@@ -32,8 +33,12 @@ const TodoListItem = ({ todo }) => {
       />
       <ListItemText primary={todo.title} />
       <ListItemSecondaryAction>
-        <IconButton aria-label="Delete Todo">
-          <DeleteOutlined />
+        <IconButton
+          aria-label="Edit Todo"
+          component={Link}
+          to={`/edit/${todo.id}`}
+        >
+          <EditOutlined />
         </IconButton>
       </ListItemSecondaryAction>
     </ListItem>
@@ -43,7 +48,7 @@ const TodoListItem = ({ todo }) => {
 TodoListItem.propTypes = {
   todo: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    priority: PropTypes.string,
+    priority: PropTypes.number,
     tags: PropTypes.arrayOf(PropTypes.string),
   }),
   loading: PropTypes.bool,

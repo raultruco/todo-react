@@ -1,6 +1,8 @@
 # todo-react
 
-A Todo frontend application using modern React paradigms such as Hooks, Flux with `useReducer`, global state with `useContext`, functional components, prop-types, etc.
+A Todo frontend application using modern React paradigms such as Hooks, Flux with `useReducer`, global state with `useContext`, functional components, prop-types...
+
+[DEMO @ Github Pages](https://raultruco.github.io/todo-react/)
 
 ## Features
 

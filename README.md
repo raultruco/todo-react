@@ -2,7 +2,12 @@
 
 A Todo frontend application using modern React paradigms such as Hooks, Flux with `useReducer`, global state with `useContext`, functional components, prop-types...
 
-[DEMO @ Github Pages](https://raultruco.github.io/todo-react/)
+## Demos
+
+A Github Action is set up to build and deploy automatically the master branch:
+
+[DEMO @ Github Pages](https://raultruco.github.io/todo-react/)  
+[DEMO @ AWS S3](http://raultruco-todo-react.s3-website.eu-west-2.amazonaws.com/)
 
 ## Features
 

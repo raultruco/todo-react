@@ -11,8 +11,9 @@
     "build": "webpack --mode production",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "yarn install && yarn run build",
+    "deploy-github": "gh-pages -d dist",
+    "deploy-s3": "aws s3 sync ./dist/ s3://raultruco-todo-react --acl public-read  --delete"
   },
   "dependencies": {
     "@material-ui/core": "^4.10.2",
